@@ -9,13 +9,11 @@
 
 import promptSync from 'prompt-sync'
 
-
 const prompt = promptSync()
 
 const massString = prompt('Enter in Mass (kg) to find Energy with E = MC2: ')
 const massInt = parseInt(massString)
-energy = massInt * (2.998 * 10**8)**2
+energy = massInt * (2.998 * 10 ** 8) ** 2
 console.log(` Energy = ${energy} Joules`)
-
 
 console.log('\nDone.')
