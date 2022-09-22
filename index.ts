@@ -1,19 +1,24 @@
 /**
- * The program shows how to get input
- *   and deal with numbers.
+ * The program shows e=mc^2
  *
  * By:      Ethan Prieur
  * Version: 1.0
- * Since:   2022-09-15
+ * Since:   2022-09-14
  */
 
 import promptSync from 'prompt-sync'
 
-const prompt = promptSync()
-
-const massString = prompt('Enter in Mass (kg) to find Energy with E = MC2: ')
-const massInt = parseInt(massString)
-energy = massInt * (2.998 * 10 ** 8) ** 2
-console.log(` Energy = ${energy} Joules`)
+try {
+  const prompt = promptSync()
+  const massString = prompt('Enter the mass(kg): ')
+  const massNumber = parseInt(massString)
+  if (isNaN(+massNumber)) {
+    throw new Error()
+  }
+  const energy = massNumber * (2.99 * 10 ** 8) ** 2
+  console.log(`${energy} joules of energy is released`)
+} catch (e) {
+  console.log('\nInvalid Input')
+}
 
 console.log('\nDone.')
